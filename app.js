@@ -32,8 +32,10 @@ passport.use(new LocalStrategy(User.authenticate()));
 passport.serializeUser(User.serializeUser());
 passport.deserializeUser(User.deserializeUser());
 
-mongoose.connect("mongodb://localhost/yelpCamp", { useUnifiedTopology: true, useNewUrlParser: true, useCreateIndex: true });
+//mongoose.connect("mongodb://localhost/yelpCamp", { useUnifiedTopology: true, useNewUrlParser: true, useCreateIndex: true });
+mongoose.connect("mongodb+srv://koyinda:Spectranet@1@cluster0-2eotf.mongodb.net/test?retryWrites=true&w=majority", { useUnifiedTopology: true, useNewUrlParser: true, useCreateIndex: true });
 
+//mongodb+srv://koyinda:<password>@cluster0-2eotf.mongodb.net/test?retryWrites=true&w=majority
 
 app.set("view engine", "ejs");
 app.use(express.static(__dirname+"/public"));
